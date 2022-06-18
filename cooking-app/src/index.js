@@ -7,12 +7,14 @@ import { BrowserRouter } from "react-router-dom";
 import Authentication from "./firebase-auth/Authentication";
 import RecipeList from "./components/RecipeList";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { PageContextProvider } from "./components/util/usePages";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Authentication />
-    <App />
+    <PageContextProvider>
+      <App />
+    </PageContextProvider>
   </React.StrictMode>
 );
 
