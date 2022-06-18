@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <PageContextProvider>
-        <Content />
+        {localStorage.getItem("name") !== "Someone" ? <Content /> : null}
       </PageContextProvider>
     </div>
   );

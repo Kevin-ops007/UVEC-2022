@@ -12,9 +12,11 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 button {
   cursor: pointer;
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,6 +36,7 @@ button {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -54,18 +57,25 @@ button {
   background-color: white;
   background-repeat: no-repeat;
   background-position: 12px 11px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
+
 .login-with-google-btn:hover {
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
 }
+
 .login-with-google-btn:active {
   background-color: #eeeeee;
 }
+
 .login-with-google-btn:focus {
   outline: none;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25),
     0 0 0 3px #c8dafc;
 }
+
 .login-with-google-btn:disabled {
   filter: grayscale(100%);
   background-color: #ebebeb;
