@@ -13,14 +13,13 @@ function Content() {
     } else {
       pageContext.setPage("RecipeList");
     }
+
   };
 
   return (
     <>
       {page === "grocery" ? <Grocery /> : <RecipeList />}
-      {page === "grocery" ? (
-        <button type="button" class="btn btn-outline-primary" onClick={clickHandler}>Generate Recipes</button>
-      ) : (
+      {page === "grocery" ? null : (
         <button type="button" class="btn btn-outline-secondary" onClick={clickHandler}>Go Back to Grocery List</button>
       )}
     </>

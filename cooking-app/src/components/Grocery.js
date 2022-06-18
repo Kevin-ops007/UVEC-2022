@@ -2,29 +2,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { possibleItems } from "./util/possibleItems";
 import { useState } from "react";
+import GroceryList from "./GroceryList"
+import RecipeList from "./RecipeList";
 
 function Grocery() {
   // get a list from firebase
-  let listItem = ["fish", "egg", "pork", "beef"];
+  let listItem = "";
   const [items, setItems] = useState([]);
   const [input, setInput] = useState("");
+  const [flag, setFlag] = useState(0);
 
   const inputHandler = (e) => {
     setInput(e.target.value);
   };
-
+  const clickHandler2 = () => {
+    setFlag(1);
+  }
   const clickHandler = async (e) => {
     e.preventDefault();
     try {
       if (possibleItems.includes(input.toLowerCase())) {
-        console.log(input);
+        listItem = input;
+        localStorage.setItem("ingredients", listItem);
+        // get data from locsl dtorsgr
+
+        // spprnd input to the list
+
+        // add the list back to the local storage
       }
     } catch (error) {
       console.log("Input:", error);
     }
   };
   const removeItem = (item) => {
-    console.log(item);
+    listItem = "";
+    localStorage.setItem("ingredients", listItem);
+
   };
 
   return (
@@ -53,22 +66,22 @@ function Grocery() {
 
       </form>
       <div className="Container">
-        {listItem.map((item) => (
-          <div key={item}>
-            <div>{item}</div>
-            <button
-              type="submit"
-              class="btn btn-outline-danger"
-              key={item}
-              onClick={() => {
-                removeItem(item);
-              }}
-            >
-              ❌
-            </button>
-          </div>
-        ))}
+        <div key={listItem}>
+          <div>{listItem}</div>
+          <button
+            type="submit"
+            class="btn btn-outline-danger"
+            key={listItem}
+            onClick={() => {
+              removeItem(listItem);
+            }}
+          >
+            ❌
+          </button>
+        </div>
       </div>
+      <button type="button" class="btn btn-outline-primary" onClick={clickHandler2}>Generate Recipes</button>
+      {flag == 1 ? <RecipeList groceryList={listItem} /> : null}
     </>
   );
 }
