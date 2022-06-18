@@ -1,7 +1,7 @@
 import "./App.css";
 import { signInWithGoogle } from "./Firebase";
 
-function App() {
+function Authentication() {
   return (
     <div className="App">
       <button class="login-with-google-btn" onClick={signInWithGoogle}>
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default Authentication;
