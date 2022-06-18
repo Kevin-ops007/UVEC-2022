@@ -9,10 +9,8 @@ import RecipeList from "./components/RecipeList";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <RecipeList />
-      <App />
-    </BrowserRouter>
+    <RecipeList />
+    <App />
   </React.StrictMode>
 );
 
