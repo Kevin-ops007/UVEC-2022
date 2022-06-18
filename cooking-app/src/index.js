@@ -10,8 +10,7 @@ import RecipeList from "./components/RecipeList";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Authentication/>
-      <App />
+    <App />
   </React.StrictMode>
 );
 
