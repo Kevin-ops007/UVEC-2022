@@ -1,13 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import Grocery from "./components/Grocery";
 import Home from "./components/Home";
+import Content from "./components/Content";
+import { PageContextProvider } from "./components/util/usePages";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
+    <div className="App">
+      <PageContextProvider>
+        <Content />
+      </PageContextProvider>
+    </div>
   );
 }
 
